@@ -48,7 +48,7 @@ from langchain.tools.requests.tool import (
     RequestsPutTool,
 )
 from langchain.tools.eleven_labs.text2speech import ElevenLabsText2SpeechTool
-from langchain.tools.steam import SteamWebAPIQueryRun
+from langchain.tools.steam.tool import SteamWebAPIQueryRun
 from langchain.tools.scenexplain.tool import SceneXplainTool
 from langchain.tools.searx_search.tool import SearxSearchResults, SearxSearchRun
 from langchain.tools.shell.tool import ShellTool

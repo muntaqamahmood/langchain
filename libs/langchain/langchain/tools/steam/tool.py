@@ -3,7 +3,6 @@
 from typing import Optional
 from langchain.tools.base import BaseTool
 from langchain.callbacks.manager import CallbackManagerForToolRun
-
 from langchain.utilities.steam_webapi import SteamWebAPIWrapper
 
 class SteamWebAPIQueryRun(BaseTool):

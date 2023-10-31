@@ -1,5 +1,4 @@
 """Util that calls Steam-WebAPI."""
-
 from langchain.pydantic_v1 import BaseModel, Extra
 
 class SteamWebAPIWrapper(BaseModel):

@@ -48,6 +48,7 @@ from langchain.tools.requests.tool import (
     RequestsPutTool,
 )
 from langchain.tools.eleven_labs.text2speech import ElevenLabsText2SpeechTool
+from langchain.tools.steam import SteamWebAPIQueryRun
 from langchain.tools.scenexplain.tool import SceneXplainTool
 from langchain.tools.searx_search.tool import SearxSearchResults, SearxSearchRun
 from langchain.tools.shell.tool import ShellTool
@@ -68,6 +69,7 @@ from langchain.utilities.google_scholar import GoogleScholarAPIWrapper
 from langchain.utilities.metaphor_search import MetaphorSearchAPIWrapper
 from langchain.utilities.awslambda import LambdaWrapper
 from langchain.utilities.graphql import GraphQLAPIWrapper
+from langchain.utilities.steam_webapi import SteamWebAPIWrapper 
 from langchain.utilities.searchapi import SearchApiAPIWrapper
 from langchain.utilities.searx_search import SearxSearchWrapper
 from langchain.utilities.serpapi import SerpAPIWrapper
@@ -242,6 +244,10 @@ def _get_google_search_results_json(**kwargs: Any) -> BaseTool:
     return GoogleSearchResults(api_wrapper=GoogleSearchAPIWrapper(**kwargs))
 
 
+def _get_steam_webapi(**kwargs: Any) -> BaseTool:
+    return SteamWebAPIQueryRun(api_wrapper=SteamWebAPIWrapper(**kwargs))
+
+
 def _get_searchapi(**kwargs: Any) -> BaseTool:
     return SearchAPIRun(api_wrapper=SearchApiAPIWrapper(**kwargs))
 
@@ -357,6 +363,7 @@ _EXTRA_OPTIONAL_TOOLS: Dict[str, Tuple[Callable[[KwArg(Any)], BaseTool], List[st
         _get_google_serper_results_json,
         ["serper_api_key", "aiosession"],
     ),
+    "steam-webapi": (_get_steam_webapi, ["steam_webapi_api_key"]),
     "searchapi": (_get_searchapi, ["searchapi_api_key", "aiosession"]),
     "searchapi-results-json": (
         _get_searchapi_results_json,

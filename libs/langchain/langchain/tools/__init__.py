@@ -821,6 +821,8 @@ def __getattr__(name: str) -> Any:
         return _import_requests_tool_RequestsPostTool()
     elif name == "RequestsPutTool":
         return _import_requests_tool_RequestsPutTool()
+    elif name == "SteamWebAPIQueryRun":
+        return _import_steam_webapi_tool()
     elif name == "SceneXplainTool":
         return _import_scenexplain_tool()
     elif name == "SearxSearchResults":
@@ -961,6 +963,7 @@ __all__ = [
     "RequestsPatchTool",
     "RequestsPostTool",
     "RequestsPutTool",
+    "SteamWebAPIQueryRun",
     "SceneXplainTool",
     "SearxSearchResults",
     "SearxSearchRun",

@@ -181,10 +181,12 @@ def _import_sql_database() -> Any:
 
     return SQLDatabase
 
+
 def _import_steam_webapi() -> Any:
     from langchain.utilities.steam_webapi import SteamWebAPIWrapper
 
     return SteamWebAPIWrapper
+
 
 def _import_tensorflow_datasets() -> Any:
     from langchain.utilities.tensorflow_datasets import TensorflowDatasets

@@ -69,7 +69,7 @@ from langchain.utilities.google_scholar import GoogleScholarAPIWrapper
 from langchain.utilities.metaphor_search import MetaphorSearchAPIWrapper
 from langchain.utilities.awslambda import LambdaWrapper
 from langchain.utilities.graphql import GraphQLAPIWrapper
-from langchain.utilities.steam_webapi import SteamWebAPIWrapper 
+from langchain.utilities.steam_webapi import SteamWebAPIWrapper
 from langchain.utilities.searchapi import SearchApiAPIWrapper
 from langchain.utilities.searx_search import SearxSearchWrapper
 from langchain.utilities.serpapi import SerpAPIWrapper

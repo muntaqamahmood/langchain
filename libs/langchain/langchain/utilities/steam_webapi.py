@@ -12,5 +12,5 @@ class SteamWebAPIWrapper(BaseModel):
 
         extra = Extra.forbid
 
-    def run(self, prompt="demo") -> str:
+    def run(self, prompt: str = "demo") -> str:
         return prompt

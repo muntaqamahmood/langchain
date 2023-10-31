@@ -11,3 +11,6 @@ class SteamWebAPIWrapper(BaseModel):
         """Configuration for this pydantic object."""
 
         extra = Extra.forbid
+
+    def run(self, prompt="demo"):
+        return prompt

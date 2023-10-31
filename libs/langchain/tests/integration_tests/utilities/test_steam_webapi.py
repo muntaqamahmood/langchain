@@ -1,4 +1,5 @@
 """Integration test for Steam Web API Wrapper."""
+
 import pytest
 
 from langchain.utilities import SteamWebAPIWrapper

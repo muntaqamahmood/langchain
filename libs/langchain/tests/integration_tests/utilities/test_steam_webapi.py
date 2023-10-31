@@ -4,6 +4,7 @@ import pytest
 
 from langchain.utilities import SteamWebAPIWrapper
 
+
 @pytest.fixture
 def api_client() -> SteamWebAPIWrapper:
     return SteamWebAPIWrapper()

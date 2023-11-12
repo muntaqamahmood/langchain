@@ -1,1 +1,1 @@
-"""Steam Web API toolkit"""
+"""Steam API toolkit"""

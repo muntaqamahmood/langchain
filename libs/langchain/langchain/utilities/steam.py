@@ -4,6 +4,7 @@ from typing import Any, List
 
 from langchain.pydantic_v1 import BaseModel, Extra, root_validator
 
+
 class SteamWebAPIWrapper(BaseModel):
     """Wrapper for Steam API."""
 

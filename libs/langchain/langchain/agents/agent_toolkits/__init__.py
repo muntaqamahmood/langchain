@@ -14,7 +14,7 @@ whether permissions of the given toolkit are appropriate for the application.
 See [Security](https://python.langchain.com/docs/security) for more information.
 """
 from pathlib import Path
-from typing import Any
+from typing import Any, List
 
 from langchain_core._api.path import as_import_path
 

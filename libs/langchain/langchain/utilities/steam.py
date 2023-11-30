@@ -3,15 +3,16 @@
 from typing import Any, List
 
 from langchain.pydantic_v1 import BaseModel, Extra, root_validator
-from langchain.tools.steam.prompt import (
-    STEAM_GET_GAMES_DETAILS,
-    STEAM_GET_RECOMMENDED_GAMES,
-)
 
 class SteamWebAPIWrapper(BaseModel):
     """Wrapper for Steam API."""
 
     steam: Any  # for python-steam-api
+
+    from langchain.tools.steam.prompt import (
+        STEAM_GET_GAMES_DETAILS,
+        STEAM_GET_RECOMMENDED_GAMES,
+    )
 
     # operations: a list of dictionaries, each representing a specific operation that
     # can be performed with the API
@@ -89,7 +90,8 @@ class SteamWebAPIWrapper(BaseModel):
         info_partOne = self.parse_to_str(info_partOne_dict)
         id = str(info_partOne_dict.get("id"))
         info_dict = self.steam.apps.get_app_details(id)
-        detailed_description = info_dict.get(id).get("data").get("detailed_description")
+        data = info_dict.get(id).get("data")
+        detailed_description = data.get("detailed_description")
 
         # detailed_description contains <li> <br> some other html tags, so we need to
         # remove them

@@ -1,12 +1,11 @@
 """Util that calls Steam-WebAPI."""
 
-from typing import Any, List, Dict
-
-from langchain.pydantic_v1 import BaseModel, Extra, root_validator
 from langchain.tools.steam.prompt import (
     STEAM_GET_GAMES_DETAILS,
     STEAM_GET_RECOMMENDED_GAMES,
 )
+from typing import Any, List
+from langchain.pydantic_v1 import BaseModel, Extra, root_validator
 
 
 class SteamWebAPIWrapper(BaseModel):

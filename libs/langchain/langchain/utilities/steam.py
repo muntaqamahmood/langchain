@@ -1,6 +1,6 @@
 """Util that calls Steam-WebAPI."""
 
-from typing import Any, List
+from typing import Any, Dict, List
 
 from langchain.pydantic_v1 import BaseModel, Extra, root_validator
 
@@ -123,7 +123,7 @@ class SteamWebAPIWrapper(BaseModel):
         except ImportError:
             raise ImportError("steamspypi library is not installed.")
         users_games = self.get_users_games(steam_id)
-        result = {}
+        result: Dict[str, Any] = {}
         most_popular_genre = ""
         most_popular_genre_count = 0
         for game in users_games["games"]:

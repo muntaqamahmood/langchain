@@ -71,7 +71,7 @@ class SteamWebAPIWrapper(BaseModel):
         """The response may contain more than one game, so we need to choose the right
         one and return the id."""
 
-        game_info = {}
+        game_info = {}  # type: ignore
         for app in games["apps"]:
             game_info["id"] = app["id"]
             game_info["link"] = app["link"]
